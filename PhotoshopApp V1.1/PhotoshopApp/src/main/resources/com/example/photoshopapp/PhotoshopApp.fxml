@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.photoshopapp.PhotoshopApp">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1001.0">
+         <children>
+            <MenuButton layoutX="24.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#importImage" text="Import" />
+                <MenuItem mnemonicParsing="false" onAction="#saveImage" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitApp" text="Exit" />
+              </items>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MenuButton>
+            <MenuButton layoutX="104.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#resizeImage" text="Resize" />
+                  <MenuItem mnemonicParsing="false" onAction="#rotateImage" text="Rotate" />
+                  <MenuItem mnemonicParsing="false" onAction="#cropImage" text="Crop" />
+               </items>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MenuButton>
+            <MenuButton layoutX="184.0" layoutY="42.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="77.0" text="Filter">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#toGray" text="ToGray" />
+                  <MenuItem mnemonicParsing="false" onAction="#toBW" text="ToBW" />
+                  <MenuItem mnemonicParsing="false" onAction="#imageBrightening" text="Brightening" />
+                  <MenuItem mnemonicParsing="false" onAction="#imageSharpening" text="Sharpening" />
+               </items>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MenuButton>
+            <BarChart fx:id="barChartImage" layoutX="722.0" layoutY="11.0" prefHeight="155.0" prefWidth="269.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Canvas fx:id="canvasImage" height="400.0" layoutX="24.0" layoutY="131.0" width="700.0" />
+            <Label layoutX="767.0" layoutY="188.0" onMouseMoved="#coordinateX" prefHeight="30.0" prefWidth="50.0" text="x :" />
+            <Label layoutX="767.0" layoutY="238.0" onMouseMoved="#coordinateY" prefHeight="30.0" prefWidth="50.0" text="y :" />
+            <Label layoutX="853.0" layoutY="188.0" onMouseMoved="#redValue" prefHeight="30.0" prefWidth="50.0" text="R :" />
+            <Label layoutX="853.0" layoutY="238.0" onMouseMoved="#greenValue" prefHeight="30.0" prefWidth="50.0" text="G :" />
+            <Label layoutX="853.0" layoutY="288.0" onMouseMoved="#blueValue" prefHeight="30.0" prefWidth="50.0" text="B :" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
